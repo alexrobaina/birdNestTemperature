@@ -1,3 +1,3 @@
 # 🦜 Birth nest temperature 🦉
 
-This is a Arduino project for save temperature and date temperature in site nest.
+This is a Arduino project for save data of the temperature and the date inside the nests.
