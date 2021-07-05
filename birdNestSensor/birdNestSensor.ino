@@ -1,13 +1,13 @@
 /******************** BIRD NEST TEMPERATURE SENSOR ********************/
 
-/* This project is created for to measure temperature in bird nests and
+/* This project is created for to measure temperature in birds nests.
 
 /**********************************************************************/
 
 /************************ STATE DEFINED *******************************/
 /*********************** ENDSTATE DEFINED *****************************/
 
-/************************ IMPORT LIBRARYS *******************************/
+/************************ IMPORT LIBRARIES *******************************/
 /* SD Library */
 #include <SPI.h>
 #include <SD.h>
@@ -47,7 +47,7 @@ int iterationCount;
 
 /************************ END DEFINE VARIABLES ****************************/
 
-/************************ START LIBRARYS ***************************/
+/************************ START LIBRARIES ***************************/
 // Clock Real time
 ThreeWire myWire(CONST_PIN_RTC_DATA, CONST_PIN_RTC_CLK, CONST_PIN_RTC_RST);
 RtcDS1302<ThreeWire> Rtc(myWire);
@@ -55,7 +55,7 @@ RtcDS1302<ThreeWire> Rtc(myWire);
 // Temperature sensor
 DHT dht(CONST_DHT_PIN, DHT11);
 
-/********************** END START LIBRARYS *************************/
+/********************** END START LIBRARIES *************************/
 
 void setup()
 {
@@ -73,7 +73,7 @@ void setup()
   createHeaderFile(dataFile);
 
   Serial.println("SD initialization done.");
-  Serial.println("Welcome to bird technologies");
+  Serial.println("Welcome to temperature gauge");
 
   delay(1000);
 }
@@ -86,8 +86,8 @@ void loop()
 
   if (isnan(temperature))
   {
-    saveError("Error in temperature sensor data", dataFile);
-    Serial.println("Error in temperature sensor data");
+    saveError("Error in temperature sensor, dataFile);
+    Serial.println("Error in temperature sensor");
     return;
   }
 
@@ -99,7 +99,7 @@ void loop()
   }
 
   saveTemperatureData(now, dataFile, temperature);
-  examplePrint(now, temperature);
+  // examplePrint(now, temperature);
 }
 
 #define countof(a) (sizeof(a) / sizeof(a[0]))
