@@ -1,3 +1,3 @@
-# 🦜 Birth nest temperature 🦉
+# 🦜 Bird nest temperature 🦉
 
-This is a Arduino project for save data of the temperature and the date inside the nests.
+This is a Arduino project for measure temperature inside the nests and save data in card SD.
