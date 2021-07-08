@@ -45,9 +45,13 @@ File dataFile;
 int activateTypeTime;
 int iterationCount;
 
-/************************ END DEFINE VARIABLES ****************************/
+// CONTANTS
+#define countof(a) (sizeof(a) / sizeof(a[0]))
 
-/************************ START LIBRARIES ***************************/
+/* END DEFINE VARIABLES */
+
+/* START LIBRARIES */
+
 // Clock Real time
 ThreeWire myWire(CONST_PIN_RTC_DATA, CONST_PIN_RTC_CLK, CONST_PIN_RTC_RST);
 RtcDS1302<ThreeWire> Rtc(myWire);
@@ -55,7 +59,7 @@ RtcDS1302<ThreeWire> Rtc(myWire);
 // Temperature sensor
 DHT dht(CONST_DHT_PIN, DHT11);
 
-/********************** END START LIBRARIES *************************/
+/* END START LIBRARIES */
 
 void setup()
 {
@@ -86,7 +90,7 @@ void loop()
 
   if (isnan(temperature))
   {
-    saveError("Error in temperature sensor, dataFile);
+    saveError("Error in temperature sensor", dataFile);
     Serial.println("Error in temperature sensor");
     return;
   }
@@ -191,8 +195,6 @@ void createHeaderFile(File dataFile)
     Serial.println("Error opening test.txt");
   }
 }
-
-#define countof(a) (sizeof(a) / sizeof(a[0]))
 
 void examplePrint(const RtcDateTime &dt, float temperature)
 {
